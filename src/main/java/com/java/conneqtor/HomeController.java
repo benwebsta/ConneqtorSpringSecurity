@@ -19,13 +19,13 @@ public class HomeController {
 	public String privatePage(){
 		return "privatePage";
 	}
-	@RequestMapping(value = "privatePage2", method = RequestMethod.GET)
-	public String privatePage2(){
-		return "testPage";
+	@RequestMapping(value = "/publicPage", method = RequestMethod.GET)
+	public String publicPage(){
+		return "publicPage";
 	}
-	@RequestMapping(value = "/admin/privatePage3", method = RequestMethod.GET)
-	public String privatePage3(){
-		return "testPage2";
+	@RequestMapping(value = "/admin/adminPage", method = RequestMethod.GET)
+	public String adminPage(){
+		return "adminPage";
 	}
 	
 	

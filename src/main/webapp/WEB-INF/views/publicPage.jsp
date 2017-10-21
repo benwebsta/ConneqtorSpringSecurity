@@ -23,12 +23,9 @@
 	<script src="resources/js/header.js"></script>
 </head>
 <body ng-app="Conneqtor">
-<h1 ng-controller="homeController">
 	<jsp:include page="header.jsp" />
-	Hello from public page mother fucking home page bitch!
-	<button><a href="publicPage">public page</a></button>
-	<button><a href="admin/adminPage">Admin Page</a></button><br>
-	{{firstName}} + {{lastName}}
-</h1>
+	<h1>public page</h1> 
+	<h5>Titled testPage.jsp</h5>
+	<a href="<c:url value='/j_spring_security_logout'/>">Logout</a>
 </body>
 </html>
