@@ -24,11 +24,16 @@
 	<!-- Javascript includes -->
 	<script src="resources/js/app.js"></script>	
 	<script src="resources/js/header.js"></script>
+	
+	<!-- css include -->
+	<link rel="stylesheet" href="resources/css/base.css">
 </head>
 <body ng-app="Conneqtor">
-	<%@ include file="header.jsp" %> 
-	<h1>public page</h1> 
-	<h5>Titled testPage.jsp</h5>
-	<a href="<c:url value='/j_spring_security_logout'/>">Logout</a>
+	<div class="background">
+		<%@ include file="header.jsp" %> 
+		<h1>public page</h1> 
+		<h5>Titled testPage.jsp</h5>
+		<a href="<c:url value='/j_spring_security_logout'/>">Logout</a>
+	</div>
 </body>
 </html>

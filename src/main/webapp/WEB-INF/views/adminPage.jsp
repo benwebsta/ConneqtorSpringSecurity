@@ -24,19 +24,24 @@
 	<!-- Javascript includes -->
 	<script src="../resources/js/app.js"></script>	
 	<script src="../resources/js/header.js"></script>
+	
+	<!-- css include -->
+	<link rel="stylesheet" href="../resources/css/base.css">
 </head>
 <body ng-app="Conneqtor">
-	<jsp:include page="header.jsp" />
-	<h1>this should be private</h1>
-	<h5>Titled testPage2.jsp</h5>
-	Could i possibly code with this lighting?
-	Coud i ??????? I don't know ... its really flashy.
-	this one seems better to me.But it isn't as flashy... HMM MMMMMM1dWha do you think???
-	
-	its insanity. DON't you think?
-	
-	SOOOOOOOOO FLASHSYYYYYYYYYHYHYHYHYHYHYHYYHYHYHYHdkekdslekdklksedflksajdflkjas;lkdf
-	
-	<a href="<c:url value='/j_spring_security_logout'/>">Logout</a>
+	<div class="background">
+		<jsp:include page="header.jsp" />
+		<h1>this should be private</h1>
+		<h5>Titled testPage2.jsp</h5>
+		Could i possibly code with this lighting?
+		Coud i ??????? I don't know ... its really flashy.
+		this one seems better to me.But it isn't as flashy... HMM MMMMMM1dWha do you think???
+		
+		its insanity. DON't you think?
+		
+		SOOOOOOOOO FLASHSYYYYYYYYYHYHYHYHYHYHYHYYHYHYHYHdkekdslekdklksedflksajdflkjas;lkdf
+		
+		<a href="<c:url value='/j_spring_security_logout'/>">Logout</a>
+	</div>
 </body>
 </html>

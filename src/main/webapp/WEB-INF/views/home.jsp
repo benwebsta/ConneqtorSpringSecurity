@@ -24,14 +24,17 @@
 	<!-- Javascript includes -->
 	<script src="resources/js/app.js"></script>	
 	<script src="resources/js/header.js"></script>
+	
+	<!-- css include -->
+	<link rel="stylesheet" href="resources/css/base.css">
 </head>
 <body ng-app="Conneqtor" ng-controller="homeController">
-
-	<%@ include file="header.jsp" %> 
-	Hello from public page mother fucking home page bitch!
-	<button><a href="publicPage">public page</a></button>
-	<button><a href="admin/adminPage">Admin Page</a></button><br>
-	{{firstName}} + {{lastName}}
-
+	<div class="background">
+		<%@ include file="header.jsp" %> 
+		Hello from public page mother fucking home page bitch!
+		<button><a href="publicPage">public page</a></button>
+		<button><a href="admin/adminPage">Admin Page</a></button><br>
+		{{firstName}} + {{lastName}}
+	</div>
 </body>
 </html>
