@@ -1,5 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%-- <%@ page session="false" %> --%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<title>Home</title>
@@ -22,13 +25,13 @@
 	<script src="resources/js/app.js"></script>	
 	<script src="resources/js/header.js"></script>
 </head>
-<body ng-app="Conneqtor">
-<h1 ng-controller="homeController">
-	<jsp:include page="header.jsp" />
+<body ng-app="Conneqtor" ng-controller="homeController">
+
+	<%@ include file="header.jsp" %> 
 	Hello from public page mother fucking home page bitch!
 	<button><a href="publicPage">public page</a></button>
 	<button><a href="admin/adminPage">Admin Page</a></button><br>
 	{{firstName}} + {{lastName}}
-</h1>
+
 </body>
 </html>

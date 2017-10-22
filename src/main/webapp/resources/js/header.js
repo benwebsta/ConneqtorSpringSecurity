@@ -3,15 +3,23 @@ app.controller("headerController",
 		function($scope) {
 
 	$scope.publicPage = function(){
-		$scope.publicPageActive = "active";
-		$scope.adminPageActive = "inactive";
 		console.log("public page");
 	}
 	
 	$scope.adminPage = function(){
-		$scope.adminPageActive = "active";
-		$scope.publicPageActive = "inactive";
 		console.log("admin page");
 	}
+	
+}]);
+app.controller("adminPageController", 
+		['$scope', 
+		function($scope) {
+
+	
+}]);
+app.controller("publicPageController", 
+		['$scope', 
+		function($scope) {
+
 	
 }]);
