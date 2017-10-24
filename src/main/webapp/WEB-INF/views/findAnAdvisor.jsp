@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title>Home</title>
+	<title>public page</title>
 	<!-- jQuery -->
 	<script
 	  src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -19,19 +19,19 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Angular JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script> -->
 	
 	<!-- Javascript includes -->
 	<script src="resources/js/app.js"></script>	
 	<script src="resources/js/header.js"></script>
+	
+	<!-- css include -->
+	<link rel="stylesheet" href="resources/css/base.css">
 </head>
-<body ng-app="Conneqtor" ng-controller="homeController">
-
-	<%@ include file="header.jsp" %> 
-	Hello from public page mother fucking home page bitch!
-	<button><a href="publicPage">public page</a></button>
-	<button><a href="admin/adminPage">Admin Page</a></button><br>
-	{{firstName}} + {{lastName}}
-
+<body ng-app="Conneqtor">
+	<div class="background">
+		<%@ include file="header.jsp" %> 
+		<h1>FIND AN ADVISOR</h1> 
+	</div>
 </body>
 </html>

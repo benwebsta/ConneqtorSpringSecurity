@@ -1,4 +1,4 @@
-package com.java.conneqtor;
+package com.conneqtor.web;
 
 import javax.servlet.http.HttpServletRequest;
 

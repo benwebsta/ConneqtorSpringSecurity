@@ -1,4 +1,4 @@
-package com.java.conneqtor;
+package com.conneqtor.config;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

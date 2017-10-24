@@ -36,7 +36,7 @@
 	
 	<beans:bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource"></beans:property>
-		<beans:property name="packagesToScan" value="com.java.conneqtor"></beans:property>
+		<beans:property name="packagesToScan" value="com.conneqtor"></beans:property>
 		<beans:property name="hibernateProperties">
 			<beans:props>
 				<beans:prop key="hibernate.dialect">${hibernate.hibernateDialect}</beans:prop>
@@ -62,7 +62,7 @@
 		</beans:bean>
 	</interceptors>
 	
-	<context:component-scan base-package="com.java.conneqtor" />
+	<context:component-scan base-package="com.conneqtor" />
 	
 	<beans:bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
 		<beans:constructor-arg value="12"></beans:constructor-arg>
