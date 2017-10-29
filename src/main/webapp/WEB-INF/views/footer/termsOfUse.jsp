@@ -30,8 +30,9 @@
 </head>
 <body ng-app="Conneqtor">
 	<div class="background">
-		<%@ include file="header.jsp" %> 
-		<h1>FIND AN ADVISOR</h1> 
+		<%@ include file="../header.jsp" %> 
+		<h1>terms of use</h1> 
+	<%@ include file="../footer.jsp" %> 
 	</div>
 </body>
 </html>

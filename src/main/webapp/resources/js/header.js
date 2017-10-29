@@ -1,13 +1,13 @@
 app.controller("headerController", 
 		['$scope', 
 		function($scope) {
-
-	$scope.publicPage = function(){
-		console.log("public page");
-	}
 	
 	$scope.adminPage = function(){
 		console.log("admin page");
+	}
+	
+	$scope.findAnAdvisor = function(){
+		console.log("find an advisor page");
 	}
 	
 }]);

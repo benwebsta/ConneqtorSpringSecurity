@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title>Home</title>
+	<title>public page</title>
 	<!-- jQuery -->
 	<script
 	  src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -28,14 +28,11 @@
 	<!-- css include -->
 	<link rel="stylesheet" href="resources/css/base.css">
 </head>
-<body ng-app="Conneqtor" ng-controller="homeController">
+<body ng-app="Conneqtor">
 	<div class="background">
-		<%@ include file="header.jsp" %> 
-		Hello from public page mother fucking home page bitch!
-		<button><a href="publicPage">public page</a></button>
-		<button><a href="admin/adminPage">Admin Page</a></button><br>
-		{{firstName}} + {{lastName}}
-	<%@ include file="footer.jsp" %> 
+		<%@ include file="../header.jsp" %> 
+		<h1>WHAT IS CONNEQTOR</h1> 
+	<%@ include file="../footer.jsp" %> 
 	</div>
 </body>
 </html>

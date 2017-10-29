@@ -14,8 +14,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/conneqtor/publicPage" ng-click="publicPage()">Public Page<span class="sr-only"></span></a></li>
-        <li><a href="/conneqtor/admin/adminPage" ng-click="adminPage()">Admin Private page</a></li>
+        <li><a href="/conneqtor/findAnAdvisor" ng-click="findAnAdvisor()">Find an Advisor<span class="sr-only"></span></a></li>
+        <!-- <li><a href="/conneqtor/admin/adminPage" ng-click="adminPage()">Admin Private page</a></li> -->
+        <li><a href="/conneqtor/whatIsConneqtor">What is Conneqtor?</a></li>
+        <li><a href="/conneqtor/searchForClients">Search for Clients</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">placeholder<span class="caret"></span></a>
           <ul class="dropdown-menu">
