@@ -1,4 +1,4 @@
-var app = angular.module("Conneqtor", []);
+var app = angular.module("Conneqtor", ['ngAnimate']);
 
 /*app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
 	function ($stateProvider, $urlRouterProvider, $locationProvider) {
