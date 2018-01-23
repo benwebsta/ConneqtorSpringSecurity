@@ -131,20 +131,116 @@
 		        </div>
 		        <div class="animate-switch" ng-switch-when="stage2">
 		          <div class="form-group">
-		            <label for="ta-body">Message Body:</label>
+		            <label for="ta-body">question 2:</label>
 		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
 		          </div>
 		          <button type="button" class="btn btn-info" ng-click="back('stage1')">Back</button>
 		          <button type="button" class="btn btn-primary" ng-click="next('stage3')">Next</button>
 		        </div>
 		        <div class="animate-switch" ng-switch-when="stage3">
-		          <h3>Summary</h3>
-		          <p>First name: {{formParams.firstName}}</p>
-		          <p>Last name: {{formParams.lastName}}</p>
-		          <p>Email: {{formParams.email}}</p>
-		          <p>Message Body: {{formParams.messageBody}}</p>
+		           <div class="form-group">
+		            <label for="ta-body">question 3:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
 		          <button type="button" class="btn btn-info" ng-click="back('stage2')">Back</button>
-		          <button type="button" class="btn btn-warning" ng-click="submitForm()">Submit</button>
+		          <button type="button" class="btn btn-primary" ng-click="next('stage4')">Next</button>
+		        </div>
+		        <div class="animate-switch" ng-switch-when="stage4">
+		          <div class="form-group">
+		            <label for="ta-body">question 4:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
+		          <button type="button" class="btn btn-info" ng-click="back('stage3')">Back</button>
+		          <button type="button" class="btn btn-primary" ng-click="next('stage5')">Next</button>
+		        </div>
+		        <div class="animate-switch" ng-switch-when="stage5">
+		          <div class="form-group">
+		            <label for="ta-body">question 5:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
+		          <button type="button" class="btn btn-info" ng-click="back('stage4')">Back</button>
+		          <button type="button" class="btn btn-primary" ng-click="next('stage6')">Next</button>
+		        </div>
+		        <div class="animate-switch" ng-switch-when="stage6">
+		          <div class="form-group">
+		            <label for="ta-body">question 6:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
+		          <button type="button" class="btn btn-info" ng-click="back('stage5')">Back</button>
+		          <button type="button" class="btn btn-primary" ng-click="next('stage7')">Next</button>
+		        </div>
+		        <div class="animate-switch" ng-switch-when="stage7">
+		          <div class="form-group">
+		            <label for="ta-body">question 7:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
+		          <button type="button" class="btn btn-info" ng-click="back('stage6')">Back</button>
+		          <button type="button" class="btn btn-primary" ng-click="next('stage8')">Next</button>
+		        </div>
+		        <div class="animate-switch" ng-switch-when="stage8">
+		          <div class="form-group">
+		            <label for="ta-body">question 8:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
+		          <button type="button" class="btn btn-info" ng-click="back('stage7')">Back</button>
+		          <button type="button" class="btn btn-primary" ng-click="next('stage9')">Next</button>
+		        </div>
+		        <div class="animate-switch" ng-switch-when="stage9">
+		          <div class="form-group">
+		            <label for="ta-body">question 9:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
+		          <button type="button" class="btn btn-info" ng-click="back('stage8')">Back</button>
+		          <button type="button" class="btn btn-primary" ng-click="next('stage10')">Next</button>
+		        </div>
+		        <div class="animate-switch" ng-switch-when="stage10">`
+		          <div class="form-group">
+		            <label for="ta-body">question 10:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
+		          <button type="button" class="btn btn-info" ng-click="back('stage9')">Back</button>
+		          <button type="button" class="btn btn-primary" ng-click="next('stage11')">Next</button>
+		        </div>
+		        <div class="animate-switch" ng-switch-when="stage11">
+		          <div class="form-group">
+		            <label for="ta-body">question 11:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
+		          <button type="button" class="btn btn-info" ng-click="back('stage10')">Back</button>
+		          <button type="button" class="btn btn-primary" ng-click="next('stage12')">Next</button>
+		        </div>
+		        <div class="animate-switch" ng-switch-when="stage12">
+		          <div class="form-group">
+		            <label for="ta-body">question 12:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
+		          <button type="button" class="btn btn-info" ng-click="back('stage11')">Back</button>
+		          <button type="button" class="btn btn-primary" ng-click="next('stage13')">Next</button>
+		        </div>
+		        
+		        <div class="animate-switch" ng-switch-when="stage13">
+		          <div class="form-group">
+		            <label for="ta-body">question 13:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
+		          <button type="button" class="btn btn-info" ng-click="back('stage12')">Back</button>
+		          <button type="button" class="btn btn-primary" ng-click="next('stage14')">Next</button>
+		        </div>
+		        <div class="animate-switch" ng-switch-when="stage14">
+		          <div class="form-group">
+		            <label for="ta-body">question 14:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
+		          <button type="button" class="btn btn-info" ng-click="back('stage13')">Back</button>
+		          <button type="button" class="btn btn-primary" ng-click="next('stage15')">Next</button>
+		        </div>
+		        <div class="animate-switch" ng-switch-when="stage15">
+		          <div class="form-group">
+		            <label for="ta-body">question 15:</label>
+		            <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
+		          </div>
+		          <button type="button" class="btn btn-info" ng-click="back('stage14')">Back</button>
+		          <button type="button" class="btn btn-primary" ng-click="submitForm()">Next</button>
 		        </div>
 		        <div class="animate-switch" ng-switch-when="success">
 		          <div class="success-wrap">
