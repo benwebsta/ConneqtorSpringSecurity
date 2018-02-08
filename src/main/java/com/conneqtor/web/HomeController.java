@@ -1,9 +1,9 @@
 package com.conneqtor.web;
 
 import javax.servlet.http.HttpServletRequest;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.stereotype.Controller;
 
 @Controller
 public class HomeController {
@@ -28,5 +28,9 @@ public class HomeController {
 	public String adminPage(){
 		return "adminPage";
 	}	
+	@RequestMapping(value = "/questionForm", method = RequestMethod.GET)
+	public String questionForm() {
+		return "questionForm";
+	}
 	
 }
