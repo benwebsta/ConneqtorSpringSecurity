@@ -19,19 +19,25 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Angular JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.js"></script>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script> -->
 	
 	<!-- Javascript includes -->
 	<script src="resources/js/app.js"></script>	
 	<script src="resources/js/header.js"></script>
+	<script src="resources/js/AnswerPoolController.js"></script>
 	
 	<!-- css include -->
 	<link rel="stylesheet" href="resources/css/base.css">
 </head>
 <body ng-app="Conneqtor">
-	<div class="background">
+	<div class="background" ng-controller="AnswerPoolController">
 		<%@ include file="header.jsp" %> 
 		<h1>Question Form</h1> 
+		{{test}}
+		test<br>
+		<button ng-click="getAllAnswerPools()">get all answer pools</button>
+		{{answerPoolList}}
 		<a href="<c:url value='/j_spring_security_logout'/>">Logout</a>
 	</div>
 </body>

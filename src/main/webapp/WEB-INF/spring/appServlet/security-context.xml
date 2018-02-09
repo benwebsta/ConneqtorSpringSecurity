@@ -25,18 +25,6 @@
             />
         </authentication-provider>
     </authentication-manager>
-    
-  <!--   <bean id="filterSecurityInterceptor"
-		class="org.springframework.security.web.access.intercept.FilterSecurityInterceptor">
-	<property name="authenticationManager" ref="authenticationManager"/>
-	<property name="accessDecisionManager" ref="accessDecisionManager"/>
-	<property name="securityMetadataSource">
-		<security:filter-security-metadata-source>
-		<security:intercept-url pattern="/secure/super/**" access="ROLE_WE_DONT_HAVE"/>
-		<security:intercept-url pattern="/secure/**" access="ROLE_SUPERVISOR,ROLE_TELLER"/>
-		</security:filter-security-metadata-source>
-	</property>
-	</bean> -->
       
 </beans:beans>
 

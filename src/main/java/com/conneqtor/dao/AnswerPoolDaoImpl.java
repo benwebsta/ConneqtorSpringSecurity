@@ -13,7 +13,11 @@ public class AnswerPoolDaoImpl implements AnswerPoolDao{
 
 	@Override
 	public List<AnswerPool> getAllAnswerPools() {
+
+		System.out.println("get all answer pools dao");
 		Session sess = HibernateUtil.getSession();
+
+		System.out.println("get all answer pools dao");
 		Transaction tx;
 
 		try {

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name = "HEALTH_AND_FITNESS")
+@Table(name = "USERS")
 public class Users {
 	
 	@Id
