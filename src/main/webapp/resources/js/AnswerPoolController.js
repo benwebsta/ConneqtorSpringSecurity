@@ -6,7 +6,11 @@ app.controller("AnswerPoolController", [ '$scope', '$http',
 			$scope.getAllAnswerPools = function() {
 				$http({
 					method : 'GET',
-					url : 'getAllAnswerPools'
+					url : 'getAllAnswerPools'/*,
+					headers: { 
+				        'Accept': 'application/json',
+				        'Content-Type': 'application/json' 
+				    },*/
 				}).then(function successCallback(response) {
 					console.log("response: " + response);
 					responseArray = response.data;
