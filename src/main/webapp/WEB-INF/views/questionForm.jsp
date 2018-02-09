@@ -26,18 +26,66 @@
 	<script src="resources/js/app.js"></script>	
 	<script src="resources/js/header.js"></script>
 	<script src="resources/js/AnswerPoolController.js"></script>
+	<script src="resources/js/AnswersController.js"></script>
+	<script src="resources/js/QuestionsController.js"></script>
+	<script src="resources/js/RolesController.js"></script>
+	<script src="resources/js/UserRolesController.js"></script>
+	<script src="resources/js/UsersController.js"></script>
 	
 	<!-- css include -->
 	<link rel="stylesheet" href="resources/css/base.css">
 </head>
 <body ng-app="Conneqtor">
-	<div class="background" ng-controller="AnswerPoolController">
+	<div class="background">
 		<%@ include file="header.jsp" %> 
 		<h1>Question Form</h1> 
 		{{test}}
-		test<br>
-		<button ng-click="getAllAnswerPools()">get all answer pools</button>
-		{{answerPoolList}}
+		test<br><br>
+		<!--<button ng-click="getAllAnswerPools()">get all answer pools</button>
+		<button ng-click="getAllAnswers()">get all answer pools</button>
+		<button ng-click="getAllQuestions()">get all answer pools</button>
+		<button ng-click="getAllRoles()">get all answer pools</button>
+		<button ng-click="getAllRoles()">get all answer pools</button>
+		<button ng-click="getAllUsers()">get all answer pools</button><br><br>-->
+		<div ng-controller="AnswerPoolController">
+			ANSWER POOL:<br>
+			=================================================================<br>
+			{{answerPoolList}}<br>
+			=================================================================<br>
+		</div><br><br>
+		<div ng-controller="AnswersController">
+			ANSWERS:<br>
+			=================================================================<br>
+			{{answersList}}<br>
+			=================================================================<br>
+		</div><br><br>
+		<div ng-controller="QuestionsController">
+			QUESTIONS:<br>
+			=================================================================<br>
+			{{questionsList}}<br>
+			=================================================================<br>
+		</div><br><br>
+		<div ng-controller="RolesController">
+			ROLES:<br>
+			=================================================================<br>
+			{{rolesList}}<br>
+			=================================================================<br>
+		</div><br><br>
+		<div ng-controller="UserRolesController">
+			USER ROLES:<br>
+			=================================================================<br>
+			{{userRolesList}}<br>
+			=================================================================<br>
+		</div><br><br>
+		<div ng-controller="UsersController">
+			USERS:<br>
+			=================================================================<br>
+			{{usersList}}<br>
+			=================================================================<br>
+		</div><br><br>
+		
+		
+		<br><br>
 		<a href="<c:url value='/j_spring_security_logout'/>">Logout</a>
 	</div>
 </body>

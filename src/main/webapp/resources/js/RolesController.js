@@ -1,22 +1,22 @@
-app.controller("AnswerPoolController", [ '$scope', '$http',
+app.controller("RolesController", [ '$scope', '$http',
 		function($scope, $http) {
 			var responseArray;
 
 			$scope.test = "FUCK";
-			$scope.getAllAnswerPools = function() {
+			$scope.getAllRoles = function() {
 				$http({
 					method : 'GET',
-					url : 'getAllAnswerPools'
+					url : 'getAllRoles'
 				}).then(function successCallback(response) {
 					console.log("response: " + response);
 					responseArray = response.data;
 					console.log("success callback");
 					console.log(responseArray);
-					$scope.answerPoolList = responseArray;
+					$scope.rolesList = responseArray;
 				}, function errorCallback(response) {
 		    		  console.log("error");
 		    	   	  console.log(response.data);
 		    	  });
 			}
-			$scope.getAllAnswerPools();
+			$scope.getAllRoles();
 		} ]);
