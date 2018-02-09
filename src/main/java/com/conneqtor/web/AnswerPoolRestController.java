@@ -21,10 +21,10 @@ public class AnswerPoolRestController {
 	@Autowired
 	private AnswerPoolService answerPoolService;
 	
-	@RequestMapping(method=RequestMethod.GET, value="/getAllAnswerPools", produces = "application/json")
+	@RequestMapping(method=RequestMethod.GET, value="/getAllAnswerPools")
 	public @ResponseBody String getAllAnswerPools_JSON(HttpServletRequest request, 
 	        													HttpServletResponse response){
-		System.out.println("Get all answer pools rest controller hit");
+		System.out.println("Get all ANSWER POOLS rest controller hit");
 		List<AnswerPool> answerPools = answerPoolService.getAllAnswerPools();
 		System.out.println("Answer Pools list: ");
 		for(int i = 0; i < answerPools.size(); i++)
