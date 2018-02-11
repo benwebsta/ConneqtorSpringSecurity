@@ -41,15 +41,21 @@
 		<h1>Question Form</h1> 
 		{{test}}
 		test<br><br>
-		<div ng-controller="QuestionsController">
-			<ol class="unstyled">
+		<div ng-controller="AnswerPoolController">
+			<ol class="unstyled" ng-controller="QuestionsController">
 				QUESTION LIST:<br>
-				<li ng-repeat="question in questionsList">
-					{{question.question}}<br>
-				</li>
+				<li ng-repeat="questionDTO in questionsDTOList">
+					{{questionDTO.question}}<br>
+					<input type="radio" ng-hide="!questionDTO.a" name="{{questionDTO.questionId}}" value="{{questionDTO.a}}">{{questionDTO.a}}<br></input>
+					<input type="radio" ng-hide="!questionDTO.b" name="{{questionDTO.questionId}}" value="{{questionDTO.b}}">{{questionDTO.b}}<br></input>
+					<input type="radio" ng-hide="!questionDTO.c" name="{{questionDTO.questionId}}" value="{{questionDTO.c}}">{{questionDTO.c}}<br></input>
+					<input type="radio" ng-hide="!questionDTO.d" name="{{questionDTO.questionId}}" value="{{questionDTO.d}}">{{questionDTO.d}}<br></input>
+					<input type="radio" ng-hide="!questionDTO.e" name="{{questionDTO.questionId}}" value="{{questionDTO.e}}">{{questionDTO.e}}<br></input>
+					<input type="radio" ng-hide="!questionDTO.f" name="{{questionDTO.questionId}}" value="{{questionDTO.f}}">{{questionDTO.f}}<br><br></input>
+				</li><br>
 			</ol>
 		</div>
-		<div ng-controller="AnswerPoolController">
+	<!-- 	<div ng-controller="AnswerPoolController">
 			ANSWER POOL:<br>
 			=================================================================<br>
 			{{answerPoolList}}<br>
@@ -84,7 +90,7 @@
 			=================================================================<br>
 			{{usersList}}<br>
 			=================================================================<br>
-		</div><br><br>
+		</div><br><br> -->
 		
 		
 		<br><br>

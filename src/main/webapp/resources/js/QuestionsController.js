@@ -18,5 +18,21 @@ app.controller("QuestionsController", [ '$scope', '$http',
 		    	   	  console.log(response.data);
 		    	  });
 			}
-			$scope.getAllQuestions();
+			
+			$scope.getAllQuestionsAndAnswers = function() {
+				$http({
+					method : 'GET',
+					url : 'getAllQuestionsAndAnswers'
+				}).then(function successCallback(response) {
+					console.log("response: " + response);
+					responseArray = response.data;
+					console.log("success callback");
+					console.log(responseArray);
+					$scope.questionsDTOList = responseArray;
+				}, function errorCallback(response) {
+		    		  console.log("error");
+		    	   	  console.log(response.data);
+		    	  });
+			}
+			$scope.getAllQuestionsAndAnswers();
 		} ]);
