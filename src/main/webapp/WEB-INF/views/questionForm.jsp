@@ -41,12 +41,14 @@
 		<h1>Question Form</h1> 
 		{{test}}
 		test<br><br>
-		<!--<button ng-click="getAllAnswerPools()">get all answer pools</button>
-		<button ng-click="getAllAnswers()">get all answer pools</button>
-		<button ng-click="getAllQuestions()">get all answer pools</button>
-		<button ng-click="getAllRoles()">get all answer pools</button>
-		<button ng-click="getAllRoles()">get all answer pools</button>
-		<button ng-click="getAllUsers()">get all answer pools</button><br><br>-->
+		<div ng-controller="QuestionsController">
+			<ol class="unstyled">
+				QUESTION LIST:<br>
+				<li ng-repeat="question in questionsList">
+					{{question.question}}<br>
+				</li>
+			</ol>
+		</div>
 		<div ng-controller="AnswerPoolController">
 			ANSWER POOL:<br>
 			=================================================================<br>
