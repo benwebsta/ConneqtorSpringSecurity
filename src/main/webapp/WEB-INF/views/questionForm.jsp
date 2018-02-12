@@ -35,26 +35,30 @@
 	<!-- css include -->
 	<link rel="stylesheet" href="resources/css/base.css">
 </head>
-<body ng-app="Conneqtor">
+<body ng-app="Conneqtor" ng-controller="QuestionsController">
 	<div class="background">
 		<%@ include file="header.jsp" %> 
 		<h1>Question Form</h1> 
 		{{test}}
 		test<br><br>
-		<div ng-controller="AnswerPoolController">
-			<ol class="unstyled" ng-controller="QuestionsController">
-				QUESTION LIST:<br>
-				<li ng-repeat="questionDTO in questionsDTOList">
-					{{questionDTO.question}}<br>
-					<input type="radio" ng-hide="!questionDTO.a" name="{{questionDTO.questionId}}" value="{{questionDTO.a}}">{{questionDTO.a}}<br></input>
-					<input type="radio" ng-hide="!questionDTO.b" name="{{questionDTO.questionId}}" value="{{questionDTO.b}}">{{questionDTO.b}}<br></input>
-					<input type="radio" ng-hide="!questionDTO.c" name="{{questionDTO.questionId}}" value="{{questionDTO.c}}">{{questionDTO.c}}<br></input>
-					<input type="radio" ng-hide="!questionDTO.d" name="{{questionDTO.questionId}}" value="{{questionDTO.d}}">{{questionDTO.d}}<br></input>
-					<input type="radio" ng-hide="!questionDTO.e" name="{{questionDTO.questionId}}" value="{{questionDTO.e}}">{{questionDTO.e}}<br></input>
-					<input type="radio" ng-hide="!questionDTO.f" name="{{questionDTO.questionId}}" value="{{questionDTO.f}}">{{questionDTO.f}}<br><br></input>
-				</li><br>
-			</ol>
-		</div>
+		<form ng-submit="submitForm()">
+			<div ng-controller="AnswerPoolController">
+				<ol class="unstyled">
+					QUESTION LIST:<br>
+					<li ng-repeat="questionDTO in questionsDTOList">
+						{{questionDTO.question}}<br>
+						<input required type="radio" ng-hide="!questionDTO.a" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="{{questionDTO.a}}">{{questionDTO.a}}<br></input>
+						<input required type="radio" ng-hide="!questionDTO.b" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="{{questionDTO.b}}">{{questionDTO.b}}<br></input>
+						<input required type="radio" ng-hide="!questionDTO.c" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="{{questionDTO.c}}">{{questionDTO.c}}<br></input>
+						<input required type="radio" ng-hide="!questionDTO.d" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="{{questionDTO.d}}">{{questionDTO.d}}<br></input>
+						<input required type="radio" ng-hide="!questionDTO.e" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="{{questionDTO.e}}">{{questionDTO.e}}<br></input>
+						<input required type="radio" ng-hide="!questionDTO.f" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="{{questionDTO.f}}">{{questionDTO.f}}<br><br></input>
+						{{model[$index]}}					
+					</li><br>
+				</ol>
+				<input type="submit" value="Submit" />
+			</div>
+		</form>
 	<!-- 	<div ng-controller="AnswerPoolController">
 			ANSWER POOL:<br>
 			=================================================================<br>

@@ -20,27 +20,27 @@ public class AnswerPool {
 	
 	@Column(name="A")
 	@Qualifier("a")
-	private String a = "";
+	private String a;
 	
 	@Column(name="B")
 	@Qualifier("b")
-	private String b = "";
+	private String b;
 	
 	@Column(name="C")
 	@Qualifier("c")
-	private String c = "";
+	private String c;
 	
 	@Column(name="D")
 	@Qualifier("d")
-	private String d = "";
+	private String d;
 	
 	@Column(name="E")
 	@Qualifier("e")
-	private String e = "";
+	private String e;
 	
 	@Column(name="F")
 	@Qualifier("f")
-	private String f = "";
+	private String f;
 
 	public int getAnswerPoolId() {
 		return answerPoolId;

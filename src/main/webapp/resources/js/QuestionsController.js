@@ -1,7 +1,9 @@
 app.controller("QuestionsController", [ '$scope', '$http',
 		function($scope, $http) {
 			var responseArray;
-
+			
+			$scope.model = {};
+			
 			$scope.test = "FUCK";
 			$scope.getAllQuestions = function() {
 				$http({
@@ -33,6 +35,11 @@ app.controller("QuestionsController", [ '$scope', '$http',
 		    		  console.log("error");
 		    	   	  console.log(response.data);
 		    	  });
+			}
+			
+			$scope.submitForm = function() {
+				console.log("in submit");
+				console.log($scope.model);
 			}
 			$scope.getAllQuestionsAndAnswers();
 		} ]);
