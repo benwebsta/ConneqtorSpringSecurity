@@ -19,21 +19,53 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Angular JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-cookies.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-messages.min.js"></script>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script> -->
 	
 	<!-- Javascript includes -->
 	<script src="resources/js/app.js"></script>	
 	<script src="resources/js/header.js"></script>
+	<script src="resources/js/RegistrationController.js"></script>
 	
 	<!-- css include -->
 	<link rel="stylesheet" href="resources/css/base.css">
+	<link rel="stylesheet" href="resources/css/login.css">
+	
 </head>
 <body ng-app="Conneqtor">
 	<div class="background">
 		<%@ include file="header.jsp" %> 
-		<h1>public page</h1> 
-		<h5>Titled testPage.jsp</h5>
+		
+
+		<div class="container" id="registration" ng-controller="RegistrationController">
+			<section id="content">
+				<form name="userForm">
+					<h1>Registration</h1>
+					<div>
+						<input type="text" name="firstName"	placeholder="First Name" id="firstName" ng-model="firstName"/>
+					</div>
+					<div>
+						<input type="text" name="last" placeholder="Last Name" id="lastName" ng-model="lastName"/>
+					</div>
+					<div>
+						<input type="text" name="user" placeholder="Username" id="username" ng-model="username"/>
+					</div>
+					<div>
+						<input type="password" name="pass" placeholder="Password" id="password" ng-model="password"/>
+						
+					</div>
+					<div id="registerButton">
+						<input type="submit" value="Register" ng-click="register()"/>
+					</div>
+				</form><!-- form -->
+			</section><!-- content -->
+		</div><!-- container -->
+		
+		
+
+
 		<a href="<c:url value='/j_spring_security_logout'/>">Logout</a>
 	</div>
 </body>

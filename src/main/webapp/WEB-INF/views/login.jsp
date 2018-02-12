@@ -25,15 +25,43 @@
 	<!-- Javascript includes -->
 	<script src="resources/js/app.js"></script>	
 	<script src="resources/js/header.js"></script>
+	<script src="resources/js/LoginController.js"></script>
 	
 	<!-- css include -->
 	<link rel="stylesheet" href="resources/css/base.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/login.css">
+	
 </head>
 <body ng-app="Conneqtor">
 	<div class="background">
 		<%@ include file="header.jsp" %> 
-		<h1>public page</h1> 
-		<h5>Titled testPage.jsp</h5>
+		
+
+		<div class="container" id="login" ng-controller="LoginController">
+			<section id="content">
+				<form>
+					<h1>Login</h1>
+					<div>
+						<input type="text" placeholder="Username" required="" id="username" ng-model="username"/>
+					</div>
+					<div>
+						<input type="password" placeholder="Password" required="" id="password" ng-model="password"/>
+					</div>
+					<div>
+						<input type="submit" value="Log in" ng-click="login()"/>
+						<a ui-sref="forgotPassword">Lost your password?</a>
+						<a ui-sref="registration">Register</a>
+					</div>
+				</form><!-- form -->
+				
+			</section><!-- content -->
+		</div><!-- container -->
+		<div class="alert alert-danger" ng-show="loginInfoIncorrect == true">
+		  <strong>Username or Password Incorrect</strong>
+		</div>
+		
+
+
 		<a href="<c:url value='/j_spring_security_logout'/>">Logout</a>
 	</div>
 </body>

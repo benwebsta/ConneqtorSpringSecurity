@@ -20,6 +20,7 @@
 	<!-- Angular JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-cookies.min.js"></script>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script> -->
 	
 	<!-- Javascript includes -->
@@ -38,6 +39,7 @@
 		<button><a href="publicPage">public page</a></button>
 		<button><a href="admin/adminPage">Admin Page</a></button><br>
 		<button><a href="questionForm">Question Form</a></button><br>
+		<button><a href="registration">Registration</a></button><br>
 		{{firstName}} + {{lastName}}
 		<%@ include file="footer.jsp" %> 
 		<button style="color: #99CC33">test</button>
