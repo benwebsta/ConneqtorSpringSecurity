@@ -14,10 +14,7 @@ public class UsersDaoImpl implements UsersDao{
 	@Override
 	public List<Users> getAllUsers() {
 
-		System.out.println("get all USERS dao");
 		Session sess = HibernateUtil.getSession();
-
-		System.out.println("get all USERS dao");
 		Transaction tx;
 
 		try {

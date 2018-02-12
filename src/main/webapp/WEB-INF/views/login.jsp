@@ -19,7 +19,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Angular JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-cookies.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-messages.min.js"></script>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script> -->
 	
 	<!-- Javascript includes -->
@@ -39,26 +41,27 @@
 
 		<div class="container" id="login" ng-controller="LoginController">
 			<section id="content">
-				<form>
+				<form name="f" action="/conneqtor/j_spring_security_check" method="POST">
 					<h1>Login</h1>
 					<div>
-						<input type="text" placeholder="Username" required="" id="username" ng-model="username"/>
+						<input type="text" placeholder="email" name="j_username" value="">
 					</div>
 					<div>
-						<input type="password" placeholder="Password" required="" id="password" ng-model="password"/>
+						<input type="password" placeholder="password" name="j_password">
 					</div>
 					<div>
-						<input type="submit" value="Log in" ng-click="login()"/>
+						<input name="submit" type="submit" value="Login">
 						<a ui-sref="forgotPassword">Lost your password?</a>
 						<a ui-sref="registration">Register</a>
 					</div>
 				</form><!-- form -->
 				
 			</section><!-- content -->
+			<div class="alert alert-danger" ng-show="loginInfoIncorrect == true">
+			  <strong>Email or Password Incorrect</strong>
+			</div>
 		</div><!-- container -->
-		<div class="alert alert-danger" ng-show="loginInfoIncorrect == true">
-		  <strong>Username or Password Incorrect</strong>
-		</div>
+		
 		
 
 

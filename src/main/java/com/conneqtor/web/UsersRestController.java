@@ -52,4 +52,21 @@ public class UsersRestController {
 		else 
 			return null;
 	}
+	
+	@RequestMapping(method=RequestMethod.POST, value="/login")
+	public @ResponseBody String login_JSON(@RequestBody String user) {		
+		System.out.println("LOGIN rest controller hit");
+		System.out.println(user);
+		
+		Gson gson = new Gson();
+		Users newUser = gson.fromJson(user, Users.class);
+		boolean loginResult = usersService.login(newUser);
+		System.out.println(newUser);
+		if(loginResult) {
+			String jsonResponse = new Gson().toJson(user);
+			return jsonResponse;
+		}
+		else 
+			return null;
+	}
 }
