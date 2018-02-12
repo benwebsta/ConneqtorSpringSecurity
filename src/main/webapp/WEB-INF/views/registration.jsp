@@ -61,10 +61,12 @@
 					</div>
 				</form><!-- form -->
 			</section><!-- content -->
+			<div class="alert alert-danger" ng-show="usernameTaken == true" ng-cloak>
+				{{userTaken.username}} is already registered
+			</div>
 		</div><!-- container -->
 		
 		
-
 
 		<a href="<c:url value='/j_spring_security_logout'/>">Logout</a>
 	</div>

@@ -24,4 +24,9 @@ public class UsersService {
 		return usersDao.getUsersById(id);
 	}
 
+	public Users getUsersByUsername(String username) {
+		System.out.println("in getUsersByUsername service");
+		System.out.println("for username: " + username);
+		return usersDao.getUsersByUsername(username);
+	}
 }

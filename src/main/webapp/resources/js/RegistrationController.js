@@ -2,7 +2,7 @@ app.controller("RegistrationController",
 	['$scope', '$http', '$rootScope',  '$timeout', '$cookies',
 		 function($scope, $http, $rootScope, $timeout, $cookies) {
 			    
-			    $scope.register = function(){
+				$scope.register = function(){
 			    	
 			    	console.log("in register");
 			    	$scope.userTaken = null;
@@ -13,6 +13,20 @@ app.controller("RegistrationController",
 				    		password : $scope.password
 				    }
 			    	console.log(userCreate);
+			    	$http({
+			    		method: 'POST',
+			    		url: 'getUsersByUsername',
+			    		data: userCreate
+			    	}).then(function successCallback(response) {
+			    		$scope.userTaken = response.data;
+			    		if($scope.userTaken){
+			    			console.log("in if");
+				    		$scope.usernameTaken = true;
+				    		$timeout(removeUsernameTaken, 4000);
+			    		}
+			    	  }, function errorCallback(response) {
+			    		  console.log("error");
+			    	  });
 			    	/*$http({
 				    	  method: 'POST',
 				    	  url: 'getUserByUsername',
@@ -70,6 +84,7 @@ app.controller("RegistrationController",
 				    	  });*/
 			    }
 			    var removeUsernameTaken = function(){
+			    	console.log("remove username taken");
 			    	$scope.usernameTaken = false;
 			    }
 		  

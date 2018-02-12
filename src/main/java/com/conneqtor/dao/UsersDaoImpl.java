@@ -57,4 +57,29 @@ public class UsersDaoImpl implements UsersDao{
 		}
 	}
 
+	@Override
+	public Users getUsersByUsername(String username) {
+		Session sess = HibernateUtil.getSession();
+		Transaction tx;
+		
+		System.out.println("get user by username dao impl");
+		System.out.println(username);
+		
+		try {
+			tx = sess.beginTransaction();
+			Query query = sess.createQuery("FROM Users WHERE username= :username");
+			query.setParameter("username", username);
+			List<Users> result = query.list();
+			System.out.println(result);
+			tx.commit();
+			if(result != null)
+				return result.get(0);
+			else 
+				return null;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

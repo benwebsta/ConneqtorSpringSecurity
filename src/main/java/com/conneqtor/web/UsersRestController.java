@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -33,5 +34,22 @@ public class UsersRestController {
 		System.out.println(jsonResponse);
 		return jsonResponse;
 	}
-
+	
+	@RequestMapping(method=RequestMethod.POST, value="/getUsersByUsername")
+	public @ResponseBody String getUsersByUsername_JSON(@RequestBody String newUserJson) {		
+		System.out.println("Get USERS BY USERNAME rest controller hit");
+		System.out.println(newUserJson);
+		
+		Gson gson = new Gson();
+		Users newUser = gson.fromJson(newUserJson, Users.class);
+		String username = newUser.getUsername();
+		Users user = usersService.getUsersByUsername(username);
+		System.out.println(user);
+		if(user != null) {
+			String jsonResponse = new Gson().toJson(user);
+			return jsonResponse;
+		}
+		else 
+			return null;
+	}
 }
