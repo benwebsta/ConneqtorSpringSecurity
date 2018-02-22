@@ -1,9 +1,23 @@
 package com.conneqtor.web;
 
+import java.security.Principal;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import com.conneqtor.beans.Users;
+
+import org.springframework.core.Constants;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 
 @Controller
 public class HomeController {
@@ -13,6 +27,10 @@ public class HomeController {
 		System.out.println(request.getRemoteAddr());
 		return "home";
 	}
+/*	public String home() {
+		return "home";
+	}*/
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home() {
 		return "home";
 	}
@@ -40,5 +58,17 @@ public class HomeController {
 	public String login() {
 		return "login";
 	}
+	@RequestMapping(value="/success", method = RequestMethod.GET)
+	  public Object printWelcome(ModelMap map) {
+		  
+		ServletRequestAttributes attr = (ServletRequestAttributes) 
+			    RequestContextHolder.currentRequestAttributes();
+		HttpSession session = attr.getRequest().getSession(true); // true == allow create
+		map.addAttribute("msg", "Successfully logged in");
+		map.addAttribute("session", session);
+		System.out.println(session);
+		return "success";
+
+	  }
 	
 }

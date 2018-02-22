@@ -39,7 +39,7 @@
 		<%@ include file="header.jsp" %> 
 		
 
-		<div class="container" id="login" ng-controller="LoginController">
+		<div class="container" id="login">
 			<section id="content">
 				<form name="f" action="/conneqtor/j_spring_security_check" method="POST">
 					<h1>Login</h1>
@@ -57,10 +57,33 @@
 				</form><!-- form -->
 				
 			</section><!-- content -->
-			<div class="alert alert-danger" ng-show="loginInfoIncorrect == true">
+			<!-- <div class="alert alert-danger" ng-show="loginInfoIncorrect == true">
 			  <strong>Email or Password Incorrect</strong>
-			</div>
+			</div> -->
 		</div><!-- container -->
+		
+	<!-- <div class="container" id="login" ng-controller="LoginController">
+ 		<section id="content">
+ 			<form>
+ 				<h1>Login</h1>
+ 				<div>
+ 					<input type="text" placeholder="Username" required="" id="username" ng-model="username"/>
+ 				</div>
+ 				<div>
+ 					<input type="password" placeholder="Password" required="" id="password" ng-model="password"/>
+ 				</div>
+ 				<div>
+ 					<input type="submit" value="Log in" ng-click="login()"/>
+					<a ui-sref="forgotPassword">Lost your password?</a>
+ 					<a ui-sref="registration">Register</a>
+ 				</div>
+ 			</form>form
+ 			
+ 			</section>content
+ 		</div>container
+ 	<div class="alert alert-danger" ng-show="loginInfoIncorrect == true">
+ 		  <strong>Username or Password Incorrect</strong>
+ 		</div> -->
 		
 		
 

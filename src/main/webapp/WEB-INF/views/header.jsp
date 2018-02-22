@@ -32,8 +32,8 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Log In</a></li>
+        <li><a href="registration">Sign Up</a></li>
+        <li><a href="login">Log In</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -13,7 +13,7 @@ app.controller("LoginController",
 				console.log(userLogin);
 				$http({
 			    	  method: 'POST',
-					  url: 'login',
+					  url: '/conneqtor/j_spring_security_check',
 					  data: userLogin
 				}).then(function successCallback(response) {
 					console.log("response: " + response.data);
@@ -32,6 +32,17 @@ app.controller("LoginController",
 					}
 					else
 						$scope.loginInfoIncorrect = true;
+				  }, function errorCallback(response) {
+				    console.log(response.data);
+				  });
+			}
+			$scope.getLoginInfo = function(){
+				console.log("in login info");
+				$http({
+			    	  method: 'GET',
+					  url: 'login2'
+				}).then(function successCallback(response) {
+					console.log("login2 response: " + response.data);
 				  }, function errorCallback(response) {
 				    console.log(response.data);
 				  });

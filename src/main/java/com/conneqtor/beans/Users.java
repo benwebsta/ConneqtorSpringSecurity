@@ -9,10 +9,12 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
+@Scope("session")
 @Table(name = "USERS")
 public class Users {
 	

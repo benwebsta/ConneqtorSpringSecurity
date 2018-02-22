@@ -5,18 +5,19 @@
     http://www.springframework.org/schema/security
     http://www.springframework.org/schema/security/spring-security-3.1.xsd">
     
-    <http auto-config="true" use-expressions="true">
+    <http auto-config="true" use-expressions="true" create-session="always"><!-- create-session="ifRequired" -->
     	<intercept-url pattern="/admin/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')"/>
     	<intercept-url pattern="/login*"/>
     	<form-login
          login-page='/login'
-         default-target-url="/home"
-         authentication-failure-url="/login?error=true" />
+         default-target-url="/success"
+         authentication-failure-url="/login?error=true"/>
+         <session-management invalid-session-url="/login" session-fixation-protection="newSession" >
+		   <concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
+		</session-management>
     </http>
     
     <beans:import resource="servlet-context.xml"/>
-
-
 
     <beans:bean id="bcrypt" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
     <authentication-manager alias="authenticationManager">

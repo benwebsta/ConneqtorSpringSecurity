@@ -27,6 +27,7 @@
 	<script src="resources/js/app.js"></script>	
 	<script src="resources/js/header.js"></script>
 	<script src="resources/js/questionaire.js"></script>
+	<script src="resources/js/LoginController.js"></script>
 	
 	<!-- css include -->
 	<link rel="stylesheet" href="resources/css/base.css">
@@ -41,6 +42,7 @@
 		<button><a href="questionForm">Question Form</a></button><br>
 		<button><a href="registration">Registration</a></button><br>
 		<button><a href="login">Login</a></button><br>
+		<button ng-controller="LoginController" ng-click="getLoginInfo()">get login info</button>
 		{{firstName}} + {{lastName}}
 		<%@ include file="footer.jsp" %> 
 		<button style="color: #99CC33">test</button>
