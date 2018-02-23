@@ -65,7 +65,7 @@ public class HomeController {
 	public String login() {
 		return "login";
 	}
-	@RequestMapping(value="/success", method = RequestMethod.GET)
+/*	@RequestMapping(value="/success", method = RequestMethod.GET)
 	  public Object printWelcome(ModelMap map) {
 		  
 		ServletRequestAttributes attr = (ServletRequestAttributes) 
@@ -84,7 +84,7 @@ public class HomeController {
 
 		return "success";
 
-	  }
+	  }*/
 	@RequestMapping(value="/loggedIn", method = RequestMethod.GET)
 	public @ResponseBody String loggedInAuth(ModelMap map, HttpServletRequest request, 
 															 HttpServletResponse response) {

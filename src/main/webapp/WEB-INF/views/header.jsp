@@ -33,7 +33,17 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="registration" ng-cloak ng-hide="username">Sign Up</a></li>
-        <li><a href="login" ng-cloak ng-show="username">{{username}}</a></li>
+        <li class="dropdown">
+          <a ng-cloak ng-show="username" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{username}}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">view account</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">edit account</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="j_spring_security_logout">logout</a></li>
+          </ul>
+        </li>
+        <li><a href="login" ng-cloak ng-show="!username" ng-cloak>Log In</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

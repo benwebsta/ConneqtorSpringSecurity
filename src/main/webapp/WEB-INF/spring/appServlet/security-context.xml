@@ -14,7 +14,7 @@
     	<intercept-url pattern="/login*"/>
     	<form-login
          login-page='/login'
-         default-target-url="/success"
+         default-target-url="/home"
          authentication-failure-url="/login?error=true"/>
          <session-management invalid-session-url="/login" session-fixation-protection="newSession" >
 		   <concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
