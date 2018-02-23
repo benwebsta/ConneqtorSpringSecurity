@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" ng-controller="headerController">
+<nav class="navbar navbar-default" ng-controller="LoginController">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -32,8 +32,8 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="registration">Sign Up</a></li>
-        <li><a href="login">Log In</a></li>
+        <li><a href="registration" ng-cloak ng-hide="username">Sign Up</a></li>
+        <li><a href="login" ng-cloak ng-show="username">{{username}}</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
