@@ -45,19 +45,19 @@
 				<form name="userForm">
 					<h1>Registration</h1>
 					<div>
-						<input type="text" name="firstName"	placeholder="First Name" id="firstName" ng-model="firstName"/>
+						<input type="text" required name="firstName"	placeholder="First Name" id="firstName" ng-model="firstName"/>
 					</div>
 					<div>
-						<input type="text" name="last" placeholder="Last Name" id="lastName" ng-model="lastName"/>
+						<input type="text" required name="last" placeholder="Last Name" id="lastName" ng-model="lastName"/>
 					</div>
 					<div>
-						<input type="text" name="user" placeholder="Username" id="username" ng-model="username"/>
+						<input type="email" required name="user" placeholder="Email" id="username" ng-model="username"/>
 					</div>
 					<div>
-						<input type="password" name="pass" placeholder="Password" id="password" ng-model="password"/>
+						<input type="password" required name="pass" placeholder="Password" id="password" ng-model="password"/>
 					</div>
 					<div>
-						<input type="password" name="matchingPass" placeholder="Retype Password" id="matchPassword" ng-model="matchingPassword"/>
+						<input type="password" required pw-check='password' name="matchingPass" placeholder="Retype Password" id="matchPassword" ng-model="matchingPassword"/>
 					</div>
 					<div id="registerButton">
 						<input type="submit" value="Register" ng-click="register()"/>
