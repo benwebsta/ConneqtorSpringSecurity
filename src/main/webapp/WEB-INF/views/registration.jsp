@@ -27,6 +27,7 @@
 	<!-- Javascript includes -->
 	<script src="resources/js/app.js"></script>	
 	<script src="resources/js/header.js"></script>
+	<script src="resources/js/LoginController.js"></script>
 	<script src="resources/js/RegistrationController.js"></script>
 	
 	<!-- css include -->
