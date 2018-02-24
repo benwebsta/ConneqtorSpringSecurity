@@ -54,16 +54,18 @@
 					</div>
 					<div>
 						<input type="password" name="pass" placeholder="Password" id="password" ng-model="password"/>
-						
+					</div>
+					<div>
+						<input type="password" name="matchingPass" placeholder="Retype Password" id="matchPassword" ng-model="matchingPassword"/>
 					</div>
 					<div id="registerButton">
 						<input type="submit" value="Register" ng-click="register()"/>
 					</div>
 				</form><!-- form -->
 			</section><!-- content -->
-			<div class="alert alert-danger" ng-show="usernameTaken == true" ng-cloak>
+			<!-- <div class="alert alert-danger" ng-show="usernameTaken == true" ng-cloak>
 				{{userTaken.username}} is already registered
-			</div>
+			</div> -->
 		</div><!-- container -->
 		
 		

@@ -2,7 +2,7 @@ app.controller("RegistrationController",
 	['$scope', '$http', '$rootScope',  '$timeout', '$cookies',
 		 function($scope, $http, $rootScope, $timeout, $cookies) {
 			    
-				$scope.register = function(){
+				/*$scope.register = function(){
 			    	
 			    	console.log("in register");
 			    	$scope.userTaken = null;
@@ -27,7 +27,7 @@ app.controller("RegistrationController",
 			    	  }, function errorCallback(response) {
 			    		  console.log("error");
 			    	  });
-			    	/*$http({
+			    	$http({
 				    	  method: 'POST',
 				    	  url: 'getUserByUsername',
 				    	  data: userCreate
@@ -81,11 +81,11 @@ app.controller("RegistrationController",
 					    	}
 				    	  }, function errorCallback(response) {
 				    		  console.log("error");
-				    	  });*/
+				    	  });
 			    }
 			    var removeUsernameTaken = function(){
 			    	console.log("remove username taken");
 			    	$scope.usernameTaken = false;
-			    }
+			    }*/
 		  
 	}]);
