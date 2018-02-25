@@ -64,9 +64,12 @@
 					</div>
 				</form><!-- form -->
 			</section><!-- content -->
-			<!-- <div class="alert alert-danger" ng-show="usernameTaken == true" ng-cloak>
-				{{userTaken.username}} is already registered
-			</div> -->
+			<div class="alert alert-danger" ng-show="emailTaken == true" ng-cloak>
+				{{username}} is already registered
+			</div>
+			<div class="alert alert-success" ng-show="registrationSuccess == true" ng-cloak>
+				Registration success
+			</div>
 		</div><!-- container -->
 		
 		

@@ -67,9 +67,8 @@ public class UsersDaoImpl implements UsersDao{
 			Query query = sess.createQuery("FROM Users WHERE username= :username");
 			query.setParameter("username", username);
 			List<Users> result = query.list();
-			System.out.println(result);
 			tx.commit();
-			if(result != null)
+			if(result.size() != 0)
 				return result.get(0);
 			else 
 				return null;

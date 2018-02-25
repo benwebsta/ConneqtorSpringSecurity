@@ -1,6 +1,8 @@
 app.controller("RegistrationController", 
 	['$scope', '$http', '$rootScope',  '$timeout', '$cookies',
 		 function($scope, $http, $rootScope, $timeout, $cookies) {
+		$scope.emailTaken = false;
+		$scope.registrationSuccess = false;
 			    
 		console.log("in registration controller");
 		$scope.register = function(){
@@ -26,16 +28,26 @@ app.controller("RegistrationController",
 			}).then(function successCallback(response) {
 				  console.log("response: " + response.data);
 				  if(response.data == null){
-					  //username/email is not taken
+					  console.log("success");
+					  $scope.registrationSuccess = true;
+					  $timeout(removeRegistrationSuccess, 2000);
 				  }
 				  else{
-					  //username/email is taken
+					  $scope.emailTaken = true;
+					  $timeout(removeEmailTaken, 2000);
 				  }
 			  }, function errorCallback(response) {
 				  console.log("error happened");
 			      console.log(response.data);
 			  });
 			
+		}
+		
+		var removeEmailTaken = function(){
+	    	$scope.emailTaken = false;
+	    }
+		var removeRegistrationSuccess = function(){
+			$scope.registrationSuccess = false;
 		}
 		
 		
