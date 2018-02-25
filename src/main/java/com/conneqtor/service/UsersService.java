@@ -45,4 +45,10 @@ public class UsersService {
 		else
 			return false;
 	}
+	
+	public Users createUsers(Users user){
+		System.out.println("in createUsers service");
+		System.out.println("creating user: " + user);
+		return usersDao.createUsers(user);
+	}
 }

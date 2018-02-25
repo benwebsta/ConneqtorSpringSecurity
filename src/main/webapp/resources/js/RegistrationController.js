@@ -29,8 +29,19 @@ app.controller("RegistrationController",
 				  console.log("response: " + response.data);
 				  if(response.data == null){
 					  console.log("success");
-					  $scope.registrationSuccess = true;
-					  $timeout(removeRegistrationSuccess, 2000);
+					  
+					  $http({
+				    	  method: 'POST',
+				    	  url: 'createNewUser',
+				    	  data: userRegister
+				    	}).then(function successCallback(response) {
+				    		console.log("create user response: " + response.data);
+							$scope.registrationSuccess = true;
+							$timeout(removeRegistrationSuccess, 2000);
+				    	  }, function errorCallback(response) {
+				    		  console.log("error");
+				    		  console.log(response.data);
+				    	  });
 				  }
 				  else{
 					  $scope.emailTaken = true;
@@ -48,6 +59,9 @@ app.controller("RegistrationController",
 	    }
 		var removeRegistrationSuccess = function(){
 			$scope.registrationSuccess = false;
+		}
+		var login = function(user){
+			window.location.href = "/";
 		}
 		
 		

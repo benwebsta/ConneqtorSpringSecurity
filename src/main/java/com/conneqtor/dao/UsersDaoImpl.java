@@ -78,4 +78,31 @@ public class UsersDaoImpl implements UsersDao{
 			return null;
 		}
 	}
+	
+	@Override
+	public Users createUsers(Users user) {
+		System.out.println("in createUsers daoImpl");
+		System.out.println(user);
+		Session sess = HibernateUtil.getSession();
+		Transaction tx;
+		
+		 try {
+		     tx = sess.beginTransaction();
+		     System.out.println(" in tx");
+		     System.out.println(user);
+			 sess.saveOrUpdate(user);
+			 System.out.println("end of tx");
+		     tx.commit();
+		     return user;
+
+		 }
+		 catch (Exception e) {
+			 System.out.println(e);
+			 e.printStackTrace();
+			 return null;
+		 }
+		 finally {
+		     sess.close();
+		 }
+	}
 }

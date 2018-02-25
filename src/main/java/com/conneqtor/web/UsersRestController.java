@@ -12,9 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.conneqtor.beans.QuestionsDTO;
 import com.conneqtor.beans.Users;
 import com.conneqtor.service.UsersService;
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonPrimitive;
 
 @Controller
 public class UsersRestController {
@@ -68,5 +73,34 @@ public class UsersRestController {
 		}
 		else 
 			return null;
+	}
+	
+	@RequestMapping(method=RequestMethod.POST, value="/createNewUser")
+	public @ResponseBody String createNewUser_JSON(@RequestBody String newUserJson){
+		System.out.println("POST user rest controller hit");
+		System.out.println(newUserJson);
+		
+		JsonElement jelement = new JsonParser().parse(newUserJson);
+		JsonObject  jobject = jelement.getAsJsonObject();
+		
+		JsonPrimitive tempObject = jobject.getAsJsonPrimitive("firstName");
+		String firstName = tempObject.getAsString();
+		
+		tempObject = jobject.getAsJsonPrimitive("lastName");
+		String lastName = tempObject.getAsString();
+		
+		tempObject = jobject.getAsJsonPrimitive("username");
+		String username = tempObject.getAsString();
+		
+		tempObject = jobject.getAsJsonPrimitive("password");
+		String password = tempObject.getAsString();
+		
+		Users newUser = new Users(firstName, lastName, username, password, 1);
+		System.out.println(newUser);	
+		newUser = usersService.createUsers(newUser);
+	
+		String jsonResponse = new Gson().toJson(newUser);
+		
+		return jsonResponse;
 	}
 }

@@ -99,5 +99,18 @@ public class Users {
 				+ username + ", password=" + password + ", active=" + active + "]";
 	}
 
+	public Users(String firstName, String lastName, String username, String password, int active) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = username;
+		this.password = password;
+		this.active = active;
+	}
+	
+	public Users() {
+		super();
+	}
+
 }
 
