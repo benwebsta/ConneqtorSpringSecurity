@@ -31,7 +31,7 @@ public class UsersService {
 		return usersDao.getUsersByUsername(username);
 	}
 	
-	public boolean login(Users user) {
+/*	public boolean login(Users user) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 		Users dbUser = getUsersByUsername(user.getUsername());
 		String userPass = encoder.encode(user.getPassword());
@@ -44,10 +44,16 @@ public class UsersService {
 			return true;
 		else
 			return false;
-	}
+	}*/
 	
 	public Users createUsers(Users user){
+		/*BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
+		System.out.println("password before: " + user.getPassword());
+		user.setPassword(encoder.encode(user.getPassword()));*/
+		
 		System.out.println("in createUsers service");
+		System.out.println("password encrypted: " + user.getPassword());
+		System.out.println("dbdbpass encrypted: $2a$06$Ur9hs5xmjB/paU36R72f5uybXXYPKchHHy8sxX6/GEXmTHKzXDzGC");
 		System.out.println("creating user: " + user);
 		return usersDao.createUsers(user);
 	}

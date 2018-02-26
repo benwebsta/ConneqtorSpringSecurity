@@ -60,7 +60,7 @@
 						<input type="password" required pw-check='password' name="matchingPass" placeholder="Retype Password" id="matchPassword" ng-model="matchingPassword"/>
 					</div>
 					<div id="registerButton">
-						<input type="submit" value="Register" ng-click="register()"/>
+						<input type="submit" value="Register" ng-disabled="userForm.$invalid" ng-click="register()"/>
 					</div>
 				</form><!-- form -->
 			</section><!-- content -->

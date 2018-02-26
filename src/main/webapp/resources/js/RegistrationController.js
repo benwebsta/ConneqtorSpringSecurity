@@ -26,6 +26,7 @@ app.controller("RegistrationController",
 				  url: 'checkEmail',
 				  data: userRegister
 			}).then(function successCallback(response) {
+				console.log("REGINSTSTSTLKJSTLKSJLKTLKJSTLJKTSLLJKST");
 				  console.log("response: " + response.data);
 				  if(response.data == null){
 					  console.log("success");
@@ -38,6 +39,7 @@ app.controller("RegistrationController",
 				    		console.log("create user response: " + response.data);
 							$scope.registrationSuccess = true;
 							$timeout(removeRegistrationSuccess, 2000);
+							
 				    	  }, function errorCallback(response) {
 				    		  console.log("error");
 				    		  console.log(response.data);
@@ -59,9 +61,10 @@ app.controller("RegistrationController",
 	    }
 		var removeRegistrationSuccess = function(){
 			$scope.registrationSuccess = false;
+			login();
 		}
 		var login = function(user){
-			window.location.href = "/";
+			window.location.href = "/conneqtor/login";
 		}
 		
 		

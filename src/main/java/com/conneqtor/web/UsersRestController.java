@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,7 +59,7 @@ public class UsersRestController {
 			return null;
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/login")
+/*	@RequestMapping(method=RequestMethod.POST, value="/login")
 	public @ResponseBody String login_JSON(@RequestBody String user) {		
 		System.out.println("LOGIN rest controller hit");
 		System.out.println(user);
@@ -73,7 +74,10 @@ public class UsersRestController {
 		}
 		else 
 			return null;
-	}
+	}*/
+	
+	/*@Autowired
+	private BCryptPasswordEncoder encoder;*/
 	
 	@RequestMapping(method=RequestMethod.POST, value="/createNewUser")
 	public @ResponseBody String createNewUser_JSON(@RequestBody String newUserJson){
@@ -94,6 +98,12 @@ public class UsersRestController {
 		
 		tempObject = jobject.getAsJsonPrimitive("password");
 		String password = tempObject.getAsString();
+		System.out.println("raw pass: " + password);
+		
+/*		BCryptPasswordEncoder encoder12 = new BCryptPasswordEncoder(12);
+		String encodedPass12 = encoder12.encode("password");
+		System.out.println(encoder12.matches(encodedPass12, "$2a$06$Ur9hs5xmjB/paU36R72f5uybXXYPKchHHy8sxX6/GEXmTHKzXDzGC"));
+		System.out.println("encoded pass: " + encodedPass12);*/
 		
 		Users newUser = new Users(firstName, lastName, username, password, 1);
 		System.out.println(newUser);	
