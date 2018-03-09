@@ -6,5 +6,7 @@ import com.conneqtor.beans.Answers;
 
 public interface AnswersDao {
 	public List<Answers> getAllAnswers();
-	public Answers getAnswerById(int id);
+	public Answers getAnswersById(int answerId);
+	public Answers getAnswersByUserId(int userId);
+	public boolean createAnswers(Answers answers);
 }

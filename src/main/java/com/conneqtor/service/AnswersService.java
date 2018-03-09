@@ -21,6 +21,18 @@ public class AnswersService {
 	public Answers getAnswersById(int id) {
 		System.out.println("in getAnswersById service");
 		System.out.println("for id: " + id);
-		return answersDao.getAnswerById(id);
+		return answersDao.getAnswersById(id);
+	}
+	
+	public Answers getAnswersByUserId(int userId) {
+		System.out.println("in getAnswersByUserId service");
+		System.out.println("for id: " + userId);
+		return answersDao.getAnswersByUserId(userId);
+	}
+	
+	public boolean createAnswers(Answers answers) {
+		System.out.println("in createAnswers service");
+		System.out.println("for answers: " + answers.toString());
+		return answersDao.createAnswers(answers);
 	}
 }

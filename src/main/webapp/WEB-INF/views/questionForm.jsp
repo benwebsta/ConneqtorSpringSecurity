@@ -32,6 +32,7 @@
 	<script src="resources/js/RolesController.js"></script>
 	<script src="resources/js/UserRolesController.js"></script>
 	<script src="resources/js/UsersController.js"></script>
+	<script src="resources/js/LoginController.js"></script>
 	
 	<!-- css include -->
 	<link rel="stylesheet" href="resources/css/base.css">
@@ -44,17 +45,36 @@
 		test<br><br>
 		<form ng-submit="submitForm()">
 			<div ng-controller="AnswerPoolController">
-				<ol class="unstyled">
+				<!-- <ol class="unstyled">
 					QUESTION LIST:<br>
 					<li ng-repeat="questionDTO in questionsDTOList">
 						{{questionDTO.question}}<br>
-						<input required type="radio" ng-hide="!questionDTO.a" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="{{questionDTO.a}}">{{questionDTO.a}}<br></input>
-						<input required type="radio" ng-hide="!questionDTO.b" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="{{questionDTO.b}}">{{questionDTO.b}}<br></input>
-						<input required type="radio" ng-hide="!questionDTO.c" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="{{questionDTO.c}}">{{questionDTO.c}}<br></input>
-						<input required type="radio" ng-hide="!questionDTO.d" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="{{questionDTO.d}}">{{questionDTO.d}}<br></input>
-						<input required type="radio" ng-hide="!questionDTO.e" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="{{questionDTO.e}}">{{questionDTO.e}}<br></input>
-						<input required type="radio" ng-hide="!questionDTO.f" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="{{questionDTO.f}}">{{questionDTO.f}}<br><br></input>
-						{{model[$index]}}					
+						<input required type="radio" ng-hide="!questionDTO.a" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="a/{{questionDTO.a}}">{{questionDTO.a}}<br></input>
+						<input required type="radio" ng-hide="!questionDTO.b" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="b/{{questionDTO.b}}">{{questionDTO.b}}<br></input>
+						<input required type="radio" ng-hide="!questionDTO.c" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="c/{{questionDTO.c}}">{{questionDTO.c}}<br></input>
+						<input required type="radio" ng-hide="!questionDTO.d" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="d/{{questionDTO.d}}">{{questionDTO.d}}<br></input>
+						<input required type="radio" ng-hide="!questionDTO.e" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="e/{{questionDTO.e}}">{{questionDTO.e}}<br></input>
+						<input required type="radio" ng-hide="!questionDTO.f" ng-model="model[$index]" name="{{questionDTO.questionId}}" value="f/{{questionDTO.f}}">{{questionDTO.f}}<br><br></input>
+						{{model[$index]}}				
+					</li><br>
+				</ol> -->
+				<ol class="unstyled">
+					QUESTION LIST:<br>
+					<li>
+						{{questionsDTOList[0].question}}<br>
+						<input required type="radio" ng-hide="!questionsDTOList[0].a" ng-model="model[0]" name="{{questionsDTOList[0].questionId}}" value="a">{{questionsDTOList[0].a}}<br></input>
+						<input required type="radio" ng-hide="!questionsDTOList[0].b" ng-model="model[0]" name="{{questionsDTOList[0].questionId}}" value="b">{{questionsDTOList[0].b}}<br></input>
+						<input required type="radio" ng-hide="!questionsDTOList[0].c" ng-model="model[0]" name="{{questionsDTOList[0].questionId}}" value="c">{{questionsDTOList[0].c}}<br></input>
+						<input required type="radio" ng-hide="!questionsDTOList[0].d" ng-model="model[0]" name="{{questionsDTOList[0].questionId}}" value="d">{{questionsDTOList[0].d}}<br></input>
+						<input required type="radio" ng-hide="!questionsDTOList[0].e" ng-model="model[0]" name="{{questionsDTOList[0].questionId}}" value="e">{{questionsDTOList[0].e}}<br></input>
+						<input required type="radio" ng-hide="!questionsDTOList[0].f}" ng-model="model[0]" name="{{questionsDTOList[0].questionId}}" value="f">{{questionsDTOList[0].f}}<br><br></input>
+						{{model[$index]}}				
+					</li><br>
+					<li>
+						{{questionsDTOList[1].question}}<br>
+						<input required type="radio" ng-hide="!questionsDTOList[1].a}" ng-model="model[1]" name="{{questionsDTOList[1].questionId}}" value="a">{{questionsDTOList[1].a}}<br></input>
+						<input required type="radio" ng-hide="!questionsDTOList[1].b}" ng-model="model[1]" name="{{questionsDTOList[1].questionId}}" value="b">{{questionsDTOList[1].b}}<br></input>
+						{{model[$index]}}				
 					</li><br>
 				</ol>
 				<input type="submit" value="Submit" />
