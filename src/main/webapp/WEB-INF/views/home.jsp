@@ -28,6 +28,7 @@
 	<script src="resources/js/header.js"></script>
 	<script src="resources/js/questionaire.js"></script>
 	<script src="resources/js/LoginController.js"></script>
+	<script src="resources/js/AnswersController.js"></script>
 	
 	<!-- css include -->
 	<link rel="stylesheet" href="resources/css/base.css">
@@ -47,6 +48,12 @@
 		<%@ include file="footer.jsp" %> 
 		<button style="color: #99CC33">test</button>
 		
+
+	<div ng-controller="AnswersController">
+		<button type="button" class="btn btn-primary btn-lg" ng-click="compareAnswers(2,4)">Compare users 2 and 4 answers</button>
+	</div>
+	<h1 ng-cloak>{{percent}}</h1>
+	
 
 
 
