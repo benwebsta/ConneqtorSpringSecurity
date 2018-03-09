@@ -3,6 +3,7 @@ app.controller("AnswersController", [ '$scope', '$http',
 			var responseArray;
 
 			$scope.test = "FUCK";
+			$scope.percent = null;
 			$scope.getAllAnswers = function() {
 				$http({
 					method : 'GET',

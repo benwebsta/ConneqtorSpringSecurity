@@ -63,10 +63,13 @@ public class AnswersDaoImpl implements AnswersDao{
 		
 		try {
 			tx = sess.beginTransaction();
-			Answers result = (Answers)sess.get(Answers.class, userId);
+			Query query = sess.createQuery("FROM Answers WHERE USER_ID= :userId");
+			query.setParameter("userId", userId);
+			List<Answers> answersList = query.list();
+			System.out.println("answersList: " + answersList);
 			tx.commit();
-			if(result != null)
-				return result;
+			if(answersList != null)
+				return answersList.get(0);
 			else 
 				return null;
 		}

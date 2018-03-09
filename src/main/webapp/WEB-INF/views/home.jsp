@@ -50,9 +50,9 @@
 		
 
 	<div ng-controller="AnswersController">
-		<button type="button" class="btn btn-primary btn-lg" ng-click="compareAnswers(2,4)">Compare users 2 and 4 answers</button>
+		<button type="button" class="btn btn-primary btn-lg" ng-click="compareAnswers(2,5)">Compare users 2 and 5 answers</button>
+		<h5 ng-cloak><b>Percent: {{percent}}</b></h5>
 	</div>
-	<h1 ng-cloak>{{percent}}</h1>
 	
 
 

@@ -43,8 +43,8 @@ public class AnswersService {
 		System.out.println("and usersId2: " + userId2);
 		Answers answers1 = answersDao.getAnswersByUserId(userId1);
 		Answers answers2 = answersDao.getAnswersByUserId(userId2);
-		System.out.println(answers1.toString());
-		System.out.println(answers2.toString());
+		System.out.println("answers1: " + answers1.toString());
+		System.out.println("answers2: " + answers2.toString());
 		
 		double count = 0;
 		if(answers1.getAnswer1().equals(answers2.getAnswer1()))
