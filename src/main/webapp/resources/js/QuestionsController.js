@@ -10,6 +10,7 @@ app.controller("QuestionsController", [ '$scope', '$http', '$rootScope',
 					method : 'GET',
 					url : 'getAllQuestions'
 				}).then(function successCallback(response) {
+					$scope.userId = $rootScope.userId;
 					console.log("response: " + response);
 					responseArray = response.data;
 					console.log("success callback");
@@ -118,6 +119,7 @@ app.controller("QuestionsController", [ '$scope', '$http', '$rootScope',
 					console.log("success callback");
 					console.log(responseArray);
 					$scope.questionsDTOList = responseArray;
+					window.location.href = '/conneqtor/searchForClients';
 				}, function errorCallback(response) {
 		    		  console.log("error");
 		    	   	  console.log(response.data);

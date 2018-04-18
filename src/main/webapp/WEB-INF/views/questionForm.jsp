@@ -77,7 +77,9 @@
 						{{model[$index]}}				
 					</li><br>
 				</ol>
-				<input type="submit" value="Submit" />
+				<input type="submit" value="Submit" ng-disabled="userId == 0"/><br>
+				<span ng-cloak ng-show="userId == 0" class="label label-danger">You must log in to submit user form!</span>
+				
 			</div>
 		</form>
 	<!-- 	<div ng-controller="AnswerPoolController">

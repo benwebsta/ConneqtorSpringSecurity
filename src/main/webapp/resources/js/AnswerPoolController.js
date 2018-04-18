@@ -9,6 +9,7 @@ app.controller("AnswerPoolController", [ '$scope', '$http',
 					url : 'getAllAnswerPools'
 				}).then(function successCallback(response) {
 					console.log("response: " + response);
+					$scope.userId = $rootScope.userId;
 					responseArray = response.data;
 					console.log("success callback");
 					console.log(responseArray);
