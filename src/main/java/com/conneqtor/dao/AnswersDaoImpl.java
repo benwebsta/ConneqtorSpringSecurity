@@ -105,4 +105,31 @@ public class AnswersDaoImpl implements AnswersDao{
 		 }
 	}
 
+	@Override
+	public boolean updateAnswers(Answers answers) {
+		System.out.println("in dao update answers");
+		System.out.println(answers);
+		Session sess = HibernateUtil.getSession();
+		Transaction tx;
+		
+		 try {
+		     tx = sess.beginTransaction();
+		     System.out.println(" in tx");
+		     //sess.persist(answers);
+			 sess.update(answers);
+			 System.out.println("end of tx");
+		     tx.commit();
+		     return true;
+
+		 }
+		 catch (Exception e) {
+			 System.out.println(e);
+			 e.printStackTrace();
+			 return false;
+		 }
+		 finally {
+		     sess.close();
+		 }
+	}
+
 }

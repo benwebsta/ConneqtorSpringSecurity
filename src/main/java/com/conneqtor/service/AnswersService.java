@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.conneqtor.beans.Answers;
+import com.conneqtor.beans.QuestionFormDTO;
 import com.conneqtor.beans.Users;
 import com.conneqtor.dao.AnswersDao;
 import com.conneqtor.dao.AnswersDaoImpl;
@@ -31,10 +32,46 @@ public class AnswersService {
 		return answersDao.getAnswersByUserId(userId);
 	}
 	
-	public boolean createAnswers(Answers answers) {
+	public QuestionFormDTO createAnswers(Answers answers) {
 		System.out.println("in createAnswers service");
 		System.out.println("for answers: " + answers.toString());
-		return answersDao.createAnswers(answers);
+		QuestionFormDTO questionFormResponse = new QuestionFormDTO();
+		UsersService usersService = new UsersService();
+		
+		Users checkUser = usersService.getUsersById(answers.getUserId());
+		if(checkUser == null) {
+			questionFormResponse.setResponse("User not found.");
+			questionFormResponse.setResult(false);
+		}
+		else {
+			Answers checkAnswers = getAnswersByUserId(answers.getUserId());
+			if(checkAnswers == null) {
+				boolean createAnswers = answersDao.createAnswers(answers);
+				if(createAnswers) {
+					questionFormResponse.setResponse("Answers submitted.");
+					questionFormResponse.setResult(true);
+				}
+				else {
+					questionFormResponse.setResponse("Answers failed to submit.");
+					questionFormResponse.setResult(false);
+				}
+			}
+			else {
+				Answers tempAnswers = answersDao.getAnswersByUserId(answers.getUserId());
+				answers.setAnswerId(tempAnswers.getAnswerId());
+				boolean updateAnswers = answersDao.updateAnswers(answers);
+				if(updateAnswers) {
+					questionFormResponse.setResponse("Answers updated.");
+					questionFormResponse.setResult(true);
+				}
+				else {
+					questionFormResponse.setResponse("Answers failed to update.");
+					questionFormResponse.setResult(false);
+				}
+			}
+			
+		}
+		return questionFormResponse;
 	}
 	
 	public double compareAnswers(int userId1, int userId2) {

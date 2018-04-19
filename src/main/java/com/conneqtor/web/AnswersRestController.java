@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.conneqtor.beans.Answers;
 import com.conneqtor.beans.AnswersCompareDTO;
+import com.conneqtor.beans.QuestionFormDTO;
 import com.conneqtor.beans.Users;
 import com.conneqtor.service.AnswersService;
 import com.google.gson.Gson;
@@ -52,9 +53,9 @@ public class AnswersRestController {
 		System.out.println("CREATE ANSWERS rest controller hit");
 		Gson gson = new Gson();
 		Answers answers = gson.fromJson(answersJson, Answers.class);
-		boolean answersResponse = answersService.createAnswers(answers);
-		System.out.println(answersResponse);
-		if(answersResponse)
+		 QuestionFormDTO questionFormResponse = answersService.createAnswers(answers);
+		System.out.println(questionFormResponse.isResult());
+		if(questionFormResponse.isResult())
 			return "true";
 		else
 			return "false";
