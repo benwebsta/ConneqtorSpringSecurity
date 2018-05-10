@@ -3,39 +3,48 @@ app.controller("QuestionsController", [ '$scope', '$http', '$rootScope',
 			var responseArray;
 			
 			$scope.model = {};
+			$scope.userLoggedIn = true;
 			
 			$scope.test = "FUCK";
 			$scope.getAllQuestions = function() {
-				$http({
-					method : 'GET',
-					url : 'getAllQuestions'
-				}).then(function successCallback(response) {
-					$scope.userId = $rootScope.userId;
-					console.log("response: " + response);
-					responseArray = response.data;
-					console.log("success callback");
-					console.log(responseArray);
-					$scope.questionsList = responseArray;
-				}, function errorCallback(response) {
-		    		  console.log("error");
-		    	   	  console.log(response.data);
-		    	  });
+				console.log("user Id: " + $scope.userId);
+				if($scope.userId >= 2){
+					$http({
+						method : 'GET',
+						url : 'getAllQuestions'
+					}).then(function successCallback(response) {
+						$scope.userId = $rootScope.userId;
+						console.log("response: " + response);
+						responseArray = response.data;
+						console.log("success callback");
+						console.log(responseArray);
+						$scope.questionsList = responseArray;
+						$scope.userLoggedIn = true;
+					}, function errorCallback(response) {
+			    		  console.log("error");
+			    	   	  console.log(response.data);
+			    	  });
+				}
+				else{
+					$scope.userLoggedIn = false;
+				}
 			}
 			
 			$scope.getAllQuestionsAndAnswers = function() {
-				$http({
-					method : 'GET',
-					url : 'getAllQuestionsAndAnswers'
-				}).then(function successCallback(response) {
-					console.log("response: " + response);
-					responseArray = response.data;
-					console.log("success callback");
-					console.log(responseArray);
-					$scope.questionsDTOList = responseArray;
-				}, function errorCallback(response) {
-		    		  console.log("error");
-		    	   	  console.log(response.data);
-		    	  });
+					$http({
+						method : 'GET',
+						url : 'getAllQuestionsAndAnswers'
+					}).then(function successCallback(response) {
+						console.log("response: " + response);
+						responseArray = response.data;
+						console.log("success callback");
+						console.log(responseArray);
+						$scope.questionsDTOList = responseArray;
+					}, function errorCallback(response) {
+			    		  console.log("error");
+			    	   	  console.log(response.data);
+			    	  });
+				
 			}
 			
 			$scope.submitForm = function() {

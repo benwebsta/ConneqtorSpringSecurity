@@ -1,5 +1,5 @@
-app.controller("AnswerPoolController", [ '$scope', '$http',
-		function($scope, $http) {
+app.controller("AnswerPoolController", [ '$scope', '$http', '$rootScope',
+		function($scope, $http, $rootScope) {
 			var responseArray;
 
 			$scope.test = "FUCK";
