@@ -29,14 +29,30 @@
 	<script src="resources/js/questionaire.js"></script>
 	<script src="resources/js/LoginController.js"></script>
 	<script src="resources/js/AnswersController.js"></script>
+	<script src="resources/js/ngFader.js"></script>
 	
 	<!-- css include -->
 	<link rel="stylesheet" href="resources/css/base.css">
 	<link rel="stylesheet" href="resources/css/questionaire.css">
+	<link type="text/css" rel="stylesheet" href="resources/css/ngFader.css">
 </head>
 <body ng-app="Conneqtor" ng-controller="homeController">
 	<div class="background">
-		<%@ include file="header.jsp" %> 
+		<%@ include file="header.jsp" %>
+		<div>
+			<h1>Welcome to Conneqtor</h1>
+			<h4>Conneqt, Advise, Grow</h4><br>
+			<!-- <ng-fader></ng-fader> -->
+			<img style="height: 300px; width: 50%; margin: auto; display: block;" src="resources/img/placeholder.png">
+			
+			<h4>At Conneqtor, we strive to match you with an advisor who you will conneqt with and help you succeed in every aspect of your life.</h4>
+			
+		</div> 
+		
+
+		<%@ include file="footer.jsp" %>
+		
+		<br>
 		Hello from public page mother fucking home page bitch! teststetst wewseseweweewsesesewewewes
 		<button><a href="publicPage">public page</a></button>
 		<button><a href="admin/adminPage">Admin Page</a></button><br>
@@ -45,7 +61,7 @@
 		<button><a href="login">Login</a></button><br>
 <!-- 		<button ng-controller="LoginController" ng-click="getLoginInfo()">get login info</button> -->
 		{{firstName}} + {{lastName}}
-		<%@ include file="footer.jsp" %> 
+		
 		<button style="color: #99CC33">test</button>
 		
 

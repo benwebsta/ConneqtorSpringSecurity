@@ -1,4 +1,4 @@
-var app = angular.module("Conneqtor", ['ngAnimate', 'ngCookies']);
+var app = angular.module("Conneqtor", ['ngAnimate', 'ngCookies', 'ngFader']);
 
 /*app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
 	function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -36,8 +36,9 @@ var app = angular.module("Conneqtor", ['ngAnimate', 'ngCookies']);
     
 }]);*/
 
-app.controller("homeController", function($scope) {
-    $scope.firstName = "John";
-    $scope.lastName = "Doe";
-});
+app.controller("homeController", ['$scope',
+	function($scope) {
+	    $scope.firstName = "John";
+	    $scope.lastName = "Doe";
+}]);
 
