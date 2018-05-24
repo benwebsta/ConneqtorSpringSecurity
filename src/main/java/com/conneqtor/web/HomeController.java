@@ -61,6 +61,10 @@ public class HomeController {
 	public String login() {
 		return "login";
 	}
+	@RequestMapping(value = "/oldPage", method = RequestMethod.GET)
+	public String oldPage() {
+		return "oldPage";
+	}
 /*	@RequestMapping(value="/success", method = RequestMethod.GET)
 	  public Object printWelcome(ModelMap map) {
 		  
