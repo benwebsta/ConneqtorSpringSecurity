@@ -1,4 +1,4 @@
-var app = angular.module("Conneqtor", ['ngAnimate', 'ngCookies', 'ngFader']);
+var app = angular.module("Conneqtor", ['ngAnimate', 'ngCookies']);
 
 /*app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
 	function ($stateProvider, $urlRouterProvider, $locationProvider) {

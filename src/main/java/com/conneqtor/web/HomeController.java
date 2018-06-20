@@ -65,6 +65,10 @@ public class HomeController {
 	public String oldPage() {
 		return "oldPage";
 	}
+	@RequestMapping(value = "/templateurl", method = RequestMethod.GET)
+	public String templateUrl() {
+		return "templateurl";
+	}
 /*	@RequestMapping(value="/success", method = RequestMethod.GET)
 	  public Object printWelcome(ModelMap map) {
 		  

@@ -21,6 +21,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-cookies.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.min.js"></script> -->
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script> -->
 	
 	<!-- Javascript includes -->
@@ -29,11 +30,12 @@
 	<script src="resources/js/questionaire.js"></script>
 	<script src="resources/js/LoginController.js"></script>
 	<script src="resources/js/AnswersController.js"></script>
-	<script src="resources/js/ngFader.js"></script>
+	<script src="resources/js/slider.js"></script>
 	
 	<!-- css include -->
 	<link rel="stylesheet" href="resources/css/base.css">
 	<link rel="stylesheet" href="resources/css/questionaire.css">
+	<link rel="stylesheet" href="resources/css/slider.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	
 	
@@ -41,32 +43,31 @@
 <body ng-app="Conneqtor" ng-controller="homeController">
 	<div class="background">
 		<%@ include file="header.jsp" %>
+		<br>
 		<div>
 			<h1>Welcome to Conneqtor</h1>
 			<h4>Conneqt, Advise, Grow</h4><br>
 			<!-- <ng-fader></ng-fader> -->
-			<img style="height: 300px; width: 50%; margin: auto; display: block;" src="resources/img/placeholder.png">
+			<!-- <img style="height: 300px; width: 50%; margin: auto; display: block;" src="resources/img/placeholder.png"> -->
+			<div ng-controller="SliderController">
+				<slider images="images" />
+			</div>
 			
 			<h4>At Conneqtor, we strive to match you with an advisor who you will conneqt with and help you succeed in every aspect of your life.</h4>
 			
 		</div> 
+		<br><br>
 		<div class="container-fluid">
 		  <div class="row">
-		    <div class="col-md">
-		      <button type="button" class="btn btn-primary btn-lg">User Signup</button>
+		    <div class="col-md text-center">
+		      <a href="/conneqtor/registration" class="btn btn-primary btn-lg">User Signup</a>
 		    </div>
-		    <div class="col-md">
-				<button type="button" class="btn btn-primary btn-lg">Advisor Signup</button>
+		    <div class="col-md text-center">
+				<a href="/conneqtor/registration" class="btn btn-primary btn-lg">Advisor Signup</a>
 		    </div>	  
 		  </div>
-		  <div class="row">
-		    <div class="col-md">
-		      <button type="button" class="btn btn-primary btn-lg">User Signup</button>
-		    </div>
-		    <div class="col-md">
-				<button type="button" class="btn btn-primary btn-lg">Advisor Signup</button>
-		    </div>	  
-		</div>
+	  	</div>
+	  	<br><br>
 		<%@ include file="footer.jsp" %>		
 		<a href="/conneqtor/oldPage">OLD PAGE</a>
 	</div>
