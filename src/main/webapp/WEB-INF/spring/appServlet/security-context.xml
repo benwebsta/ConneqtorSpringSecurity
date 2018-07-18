@@ -14,21 +14,22 @@
     	<intercept-url pattern="/login*"/>
     	<form-login
          login-page='/login'
-         default-target-url="/home"/>
+         default-target-url="/home"
+         authentication-failure-url="/fail"
+         />
          <!-- authentication-failure-url="/login?error=true"/> -->
          <!-- <session-management invalid-session-url="/login" session-fixation-protection="newSession" >
 		   <concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
 		</session-management> -->
     </http>
     
+
+    
     <beans:import resource="servlet-context.xml"/>
 
-<!--     <beans:bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
-   		<beans:constructor-arg value="12" />
-    </beans:bean> -->
     <authentication-manager alias="authenticationManager">
         <authentication-provider>
-            <!-- <password-encoder ref="encoder"/> -->
+            <password-encoder hash="bcrypt"/>
             <jdbc-user-service id="jdbcUserService" data-source-ref="dataSource"
                 users-by-username-query="
                 select username, password, active
@@ -39,7 +40,18 @@
             />
         </authentication-provider>
     </authentication-manager>
+      
+      
+      
+      
+   	<!-- <beans:bean id="authenticationFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
+	  <beans:property name="authenticationManager" ref="authenticationManager"/>
+	  <beans:property name="filterProcessesUrl" value="/login"/>
+	</beans:bean>  -->
 
+<!-- 	<beans:bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+		<beans:constructor-arg name="strength" value="12" />
+	</beans:bean> -->
       
 </beans:beans>
 

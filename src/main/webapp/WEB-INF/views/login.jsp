@@ -44,10 +44,10 @@
 
 		<div class="container" id="login">
 			<section id="content">
-				<form name="f" action="/conneqtor/j_spring_security_check" method="POST">
+				<form action="<c:url value='j_spring_security_check'/>" method="POST">
 					<h1>Login</h1>
 					<div>
-						<input type="text" placeholder="email" name="j_username" value="">
+						<input type="text" placeholder="email" name="j_username">
 					</div>
 					<div>
 						<input type="password" placeholder="password" name="j_password">

@@ -100,12 +100,12 @@ public class UsersRestController {
 		String password = tempObject.getAsString();
 		System.out.println("raw pass: " + password);
 		
-/*		BCryptPasswordEncoder encoder12 = new BCryptPasswordEncoder(12);
-		String encodedPass12 = encoder12.encode("password");
-		System.out.println(encoder12.matches(encodedPass12, "$2a$06$Ur9hs5xmjB/paU36R72f5uybXXYPKchHHy8sxX6/GEXmTHKzXDzGC"));
-		System.out.println("encoded pass: " + encodedPass12);*/
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String encodedPass = encoder.encode("password");
+		System.out.println(encoder.matches("password", encodedPass));
+		System.out.println("encoded pass: " + encodedPass);
 		
-		Users newUser = new Users(firstName, lastName, username, password, 1);
+		Users newUser = new Users(firstName, lastName, username, encodedPass, 1);
 		System.out.println(newUser);	
 		newUser = usersService.createUsers(newUser);
 	

@@ -41,8 +41,8 @@
 -        <li><a href="login" ng-cloak ng-show="username">{{username}}</a></li>
 	 </ul> -->
 	 <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Sign Up</a></li>
-      <li><a href="#">Login</a></li>
+      <li><a href="/conneqtor/signUp">Sign Up</a></li>
+      <li><a href="/conneqtor/login">Login</a></li>
     </ul>
   </div>
 </nav>
