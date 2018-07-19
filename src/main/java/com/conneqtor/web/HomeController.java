@@ -65,6 +65,14 @@ public class HomeController {
 	public String oldPage() {
 		return "oldPage";
 	}
+	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
+	public String registration() {
+		return "registration";
+	}
+	@RequestMapping(value = "/fail", method = RequestMethod.GET)
+	public String fail() {
+		return "fail";
+	}
 	@RequestMapping(value = "/templateurl", method = RequestMethod.GET)
 	public String templateUrl() {
 		return "templateurl";

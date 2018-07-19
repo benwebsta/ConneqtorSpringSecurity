@@ -5,7 +5,7 @@
     http://www.springframework.org/schema/security
     http://www.springframework.org/schema/security/spring-security-3.2.xsd">
     
-    <http auto-config="true" use-expressions="true" create-session="always"><!-- create-session="ifRequired" -->
+    <http auto-config="true" use-expressions="true" create-session="always" ><!-- create-session="ifRequired" -->
     	<!-- <remember-me
         token-validity-seconds="1209600"
 		remember-me-parameter="remember-me"
@@ -40,8 +40,21 @@
             />
         </authentication-provider>
     </authentication-manager>
+ 
       
-      
+   <!--    <jdbc-user-service id="jdbcUserService" data-source-ref="dataSource"
+                users-by-username-query="
+                select username, password, active
+                from users where username=?" 
+                authorities-by-username-query="
+                select u.username, r.role from users u, roles r, user_roles ur 
+                where u.user_id=ur.user_id and r.role_id=ur.role_id and u.username=?" 
+            /> -->
+            
+            
+            
+            
+            
       
       
    	<!-- <beans:bean id="authenticationFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">

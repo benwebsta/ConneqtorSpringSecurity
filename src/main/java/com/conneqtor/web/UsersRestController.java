@@ -100,7 +100,7 @@ public class UsersRestController {
 		String password = tempObject.getAsString();
 		System.out.println("raw pass: " + password);
 		
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 		String encodedPass = encoder.encode("password");
 		System.out.println(encoder.matches("password", encodedPass));
 		System.out.println("encoded pass: " + encodedPass);
